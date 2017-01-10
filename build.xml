@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="xar" name="MODS Database Loader">
+    <target name="xar">
+        <delete file="naddara-1.0.xar" failonerror="false"/>
+        <zip destfile="naddara-1.0.xar">
+            <fileset dir="." excludes=".svn"/>
+        </zip>
+    </target>
+</project>
