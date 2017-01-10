@@ -1,0 +1,821 @@
+/*color scheme begins
+#000000 3 black
+#666666 6 dark gray
+#BBBBBB 4 middle gray
+#EDEDED 4 light gray
+#FFFFFF 4 white
+#5DB0E6 6 theme blue
+color scheme ends*/
+
+body {
+    margin: 0;
+    background-color: white;
+}
+
+.nav img {
+    margin-right: 1em;
+}
+
+p, td {
+    line-height:1.25em;
+}
+
+a {
+    color:#555555;
+    text-decoration:none;
+    font-weight:normal;    
+}
+
+a:hover {
+    text-decoration:none;
+    color:#3399CC;
+    border-bottom:0
+}
+
+a:link, a:visited {
+    color:#745105; 
+    }
+
+img {border:0;
+}
+
+#content {
+    width: 800px;
+	margin: 10px auto;
+    overflow: auto;
+    position: relative;
+}
+
+/*page top elements begin*/
+
+#page-head {
+    width: 800px;
+    margin: 10px auto;
+}
+
+#page-head h1 {
+    margin: 0;
+    padding: 0;
+    height: 150px;
+    background: #D9B66B url(../images/header01.jpg) repeat-x left top;
+}
+
+.menu {
+    height: 24px;
+	background: #F7F7F7;
+	width: 100%;
+	margin-bottom: 4px;
+}
+
+.menu ul {
+	margin: 0 0 4px 0;
+	padding: 0;
+	list-style: none;
+}
+
+.menu ul li {
+	position: relative;
+	float: left;
+}
+
+/*Top level menu link items style*/
+.menu ul li a {
+	display: block;
+	padding: 4px 8px;
+	text-decoration: none;
+}
+
+* html .menu ul li a {
+	/*IE6 hack to get sub menu links to behave correctly*/
+	display: inline-block;
+}
+
+.menu ul li a:hover {
+	background: black; /*tab link background during hover state*/
+	color: white;
+}
+
+/*1st sub level menu*/
+.menu ul li ul {
+	position: absolute;
+	left: 0;
+	display: none;
+	z-index: 2000;
+	border: 1px solid #AAA;
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+}
+
+.menu ul li:hover ul {
+    display: block;
+}
+/*
+Sub level menu list items (undo style from Top level List Items)
+.menu ul li ul li {
+	display: block;
+	float: none;
+}*/
+
+/* Sub level menu links style */
+.menu ul li ul li a {
+	padding: 5px;
+	margin: 0;
+	background: #F0F0F0;
+	width: 200px; /*width of sub menus*/
+}
+
+.menu ul li ul li a:hover { /*sub menus hover style*/
+	background: black;
+	color: white;
+}
+
+/*page top elements end*/
+#page-footer {
+    display:block;
+    margin:0 50px 20px 50px; 
+    background-color:#EBEBEB;
+    color:#4D4D4D;
+    text-align:center;
+    margin-top:-7em;
+    padding:.5em;
+    border:1px solid #C7B899;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+* html #page-footer {   
+    1width:860px;
+    margin-top:20px;
+}
+
+table.biblio-full td.collection-label {
+    background-color:#FFFFFF;
+    text-align:right;
+}
+
+ul.dynatree-container {
+    border:0;
+    background-color:white;/*#EDEDED !important;*/
+    font-size:1em;
+    margin-left:5px;
+    margin-right:5px;
+    margin-bottom:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+
+td.collection-path {
+    width:800px;    
+}
+
+/*collection-tree ends*/
+
+/*create new record dialog*/
+
+.language-label {
+    padding:.5em;
+}
+
+.language-list {
+    position:absolute;
+    right:2em;
+}
+
+.language-list option {
+    margin:.25em .5em .25em .5em;
+}
+
+.box {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    background-color:#EDEDED;
+    color:#A8A8A8;
+    margin-top:0;
+    margin-bottom:5px;
+    height:40px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    padding:2px;
+}
+
+.box p {
+    margin:4px;
+}
+
+#results-head {
+    margin-bottom:10px;
+    margin-top:10px;
+    border-bottom:1px solid #BBBBBB;
+    padding:2px 8px 12px 2px;
+}
+
+.records-found {
+	margin-right:1em;
+}
+#results {
+    margin-top:.5em;
+    overflow: auto;
+}
+
+#metadata {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    bottom: 100px;
+    width: 50%;
+    display: none;
+    z-index: 2002;
+    padding: 16px;
+    border: 0;
+    background-color: white;
+    border-radius:10px;
+    overflow:auto;
+    box-shadow:0px 0px 15px black;/*CSS3 shadow: 30px blurred shadow all around form*/ 
+    -webkit-box-shadow:0px 0px 15px black;/*Safari shadow version*/ 
+    -moz-box-shadow:0px 0px 15px black;/* Mozilla shadow version*/
+}
+
+#metadata .close {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.hi {
+	background-color:#5DB0E6;
+}
+
+.label select {
+	margin-left:.5em;
+}
+
+.search-field {
+	width:10em;
+}
+
+.hit-count {
+	1color:#5DB0E6;
+	font-weight:bold;
+}
+
+.authors {
+    display:none;
+}
+
+.pagination-n, 
+.actions-cell,
+.detail-type,
+.list-type,
+.pagination-number
+{
+    text-align:center;
+    vertical-align:top;
+    margin:0;
+}
+
+.detail-type {
+    margin: 10px 0 0 0;
+    padding-left: 10px;
+    text-align: center;
+}
+
+.pagination-n {
+    padding:0.55em 0 0 0;
+    -moz-border-radius-topleft:4px;
+    -moz-border-radius-bottomleft:4px;
+    border-top-left-radius:4px 4px;
+    border-bottom-left-radius:4px 4px;
+ }
+
+.subject td {
+    vertical-align:middle;
+    border:gray 1px;
+    padding:0;    
+}
+
+.action-toolbar {
+    float:right;
+}
+
+/*main structures for display of search results begins*/
+#results ul {
+    list-style: none;
+    padding: 2px 0 0 2px;
+    overflow: auto;
+}
+
+#results li {
+    float: left;
+    padding: 4px 4px;
+    margin: -2px 0 0 -2px;
+    text-align: center;
+    position: relative;
+    border: 2px solid #D9B66B;
+}
+
+#results li.gallery {
+    width: 256px;
+}
+
+#results li.gallery .icon {
+    position: relative;
+    display: inline-block;
+    height: 256px;
+    line-height: 256px;
+    width: 256px;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 8px;
+}
+
+#results li.gallery .info {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    z-index: 100;
+    display: none;
+    padding: 6px;
+}
+
+#results li.gallery:hover .info {
+    display: block;
+}
+
+.info {
+    cursor: pointer;
+}
+
+#results li img {
+    display: inline;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+#results li h4 {
+    margin: 0;
+    font-size: 75%;
+    font-weight: normal;
+}
+
+#results .nav {
+    font-size: 133%;
+    margin: 8px 10px;
+}
+
+li .pagination-number {
+    display: none;
+}
+
+table .biblio-full {
+    margin-top:-.75em;
+}
+
+table .pagination-toggle {
+    cursor:pointer;
+    text-decoration:none;
+    line-height:1.8em;
+    padding-left:.5em;
+    padding-right:.5em;
+    -moz-border-radius-topright:4px;
+    -moz-border-radius-bottomright:4px;
+    border-top-right-radius:4px 4px;
+    border-bottom-right-radius:4px 4px;
+}
+
+table .even {
+    background-color:#EDEDED;
+}
+
+table .biblio-full .collection {
+	width:30em; /*to keep the collection path from overlapping the actions toolbar*/
+}
+
+table .biblio-full .label {
+    text-align:right;
+    padding-right:1em;
+    vertical-align:middle;
+    width:90em; /*to set a minimum width that keeps the table biblio-full from collapsing*/
+}
+
+table .biblio-full .record {
+    font-weight:normal;
+    text-align:left;
+    vertical-align:middle;
+    width:65em;
+}
+
+table .biblio-full tr {
+    height:1.25em;
+}
+
+table .biblio-full .sublabel {
+    font-weight:bold;
+    text-align:right;
+    padding-right:1em;
+    vertical-align:middle;
+    color:gray;
+    width:5em;
+}
+
+table .biblio-full .host {
+    font-weight:bold;
+    text-align:right;
+    padding-right:1em;
+    width:16em;
+}
+
+table .biblio-full .deemph {
+    text-align:right;
+    vertical-align:middle;
+    color:gray;
+    width:10em;
+}
+
+table .biblio-full .subrecord {
+    font-weight:normal;
+    text-align:left;
+    vertical-align:middle;
+    width:40em;
+}
+
+table .biblio-full .record table,
+table .biblio-full .subrecord table {
+	margin:0;
+}
+
+table .biblio-full .related td {
+    margin:10em;
+    line-height:3.4em;
+    border-top:1px solid gray;
+}
+
+/*main structures for display of search results ends*/
+
+/*results-view styling begins*/
+
+td .title {
+    font-style:italic;
+}
+
+td .title-no-italics {}
+
+td .name {}
+
+td .relatedItem-row {}
+
+td .relatedItem-span {}
+
+td .relatedItem-label {}
+
+/*results-view styling ends*/
+
+.actions-toolbar {
+    float:right;
+}
+
+.save {
+    vertical-align:top;
+}
+
+.save img, .actions-toolbar img {
+    border:0;
+    margin:0;
+}
+
+.ui-widget {
+    font-size:1em;
+}
+
+.ui-widget-content .ui-state-default {
+	color:#444444;
+}
+
+#optimize-trigger { /*shown when logged in as admin*/
+	float:right;
+}
+
+form ul li {
+	list-style:none;
+}
+
+/* image gallery lightbox */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.9;
+    opacity:.90;
+    filter: alpha(opacity=90);
+}
+
+.lightbox .view {
+    position: fixed;
+    top: 50%;
+    text-align: center;
+    z-index:2002;
+    
+    padding: 16px;
+    border: 0;
+    background-color: white;
+    border-radius:10px;
+    overflow:auto;
+    box-shadow:0px 0px 15px black;/*CSS3 shadow: 30px blurred shadow all around form*/ 
+    -webkit-box-shadow:0px 0px 15px black;/*Safari shadow version*/ 
+    -moz-box-shadow:0px 0px 15px black;/* Mozilla shadow version*/
+}
+
+.lightbox .image {
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    text-align:center;
+}
+
+.lightbox #viewer-image {
+/* scale to parent container */
+    max-width: 100%;
+    max-height: 100%;
+}
+.lightbox h4 {
+    color: #666;
+    font-weight: normal;
+    font-size: 125%;
+    margin: 10px auto 0 auto;
+}
+
+.lightbox .next, .lightbox .previous {
+    position: absolute;
+    display: none;
+    padding: 0 10px 10px 10px;
+    background-color: white;
+    color: #444;
+    font-size: 200%;
+    font-weight: bold;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+
+.lightbox .image:hover .close,
+.lightbox .image:hover .next,
+.lightbox .image:hover .previous {
+    display: block;
+}
+
+.lightbox .close {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+
+.lightbox .next {
+    top: 33%;
+    right: 0;
+}
+
+.lightbox .previous {
+    top: 33%;
+    left: 0;
+}
+
+.filmstrip {
+    position: fixed;
+    display: none;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 2001;
+    overflow: hidden;
+}
+
+.filmstrip ul {
+    list-style: none;
+    height: 68px;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    background: black;
+}
+
+.filmstrip li {
+    display: inline-block;
+    height: 64px;
+    width: 64px;
+    line-height: 64px;
+    border: 2px solid black;
+    text-align: center;
+    margin: 0;
+}
+
+#collectionSharingDetails table td {
+	border-color:#F5F4F2;
+}
+
+#add-user-to-share-dialog {
+	width:30em;
+}
+
+#collectionSharingDetails td, #collectionSharingDetails th {
+    line-height: 0.8em;
+    padding: 3px 10px;
+
+}
+
+#collectionSharingDetails table td {
+	border:1px solid lightgray;
+}
+	
+#login-form {
+    width:30em;
+}
+
+.filmstrip li img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.filmstrip .highlighted {
+    border: 2px solid #FFF;
+}
+
+.metadata {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    bottom: 100px;
+    width: 50%;
+    display: none;
+    z-index: 2002;
+    
+    padding: 16px;
+    border: 0;
+    background-color: white;
+    border-radius:10px;
+    overflow:auto;
+    box-shadow:0px 0px 15px black;/*CSS3 shadow: 30px blurred shadow all around form*/ 
+    -webkit-box-shadow:0px 0px 15px black;/*Safari shadow version*/ 
+    -moz-box-shadow:0px 0px 15px black;/* Mozilla shadow version*/
+}
+
+.show-metadata {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: none;
+    z-index: 2002;
+    
+    padding: 16px;
+    background-color: white;
+    color: #000;
+}
+
+.clear {
+    clear: both;
+}
+
+/* image gallery lightbox */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.9;
+    opacity:.90;
+    filter: alpha(opacity=90);
+}
+
+.lightbox .view {
+    position: fixed;
+    top: 50%;
+    text-align: center;
+    z-index:2002;
+    
+    padding: 16px;
+    border: 0;
+    background-color: white;
+    border-radius:10px;
+    overflow:auto;
+    box-shadow:0px 0px 15px black;/*CSS3 shadow: 30px blurred shadow all around form*/ 
+    -webkit-box-shadow:0px 0px 15px black;/*Safari shadow version*/ 
+    -moz-box-shadow:0px 0px 15px black;/* Mozilla shadow version*/
+}
+
+.lightbox .image {
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    text-align:center;
+}
+
+.lightbox .image img.content {
+    height: 100%;
+}
+
+.lightbox h4 {
+    color: #666;
+    font-weight: normal;
+    font-size: 125%;
+    margin: 10px auto 0 auto;
+}
+
+.lightbox .next, .lightbox .previous {
+    position: absolute;
+    display: none;
+    padding: 0 10px 10px 10px;
+    background-color: white;
+    color: #444;
+    font-size: 200%;
+    font-weight: bold;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+
+.lightbox .image:hover .close,
+.lightbox .image:hover .next,
+.lightbox .image:hover .previous {
+    display: block;
+}
+
+.lightbox .close {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+
+.lightbox .next {
+    top: 33%;
+    right: 0;
+}
+
+.lightbox .previous {
+    top: 33%;
+    left: 0;
+}
+
+.filmstrip {
+    position: fixed;
+    display: none;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 2001;
+    overflow: hidden;
+}
+
+.filmstrip ul {
+    list-style: none;
+    /* height: 140px; */
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    background: black;
+}
+
+.filmstrip li {
+    display: inline-block;
+    height: 64px;
+    width: 64px;
+    line-height: 64px;
+    border: 2px solid black;
+    text-align: center;
+    margin: 0;
+}
+
+.filmstrip li img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.filmstrip .highlighted {
+    border: 2px solid #FFF;
+}
+
+.filmstripPageButtonContainer {
+    text-align: center;
+}
+
+.filmstripPageButton {
+    font-size: 20pt;
+    color: white;
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.filmstripPageButton:hover {
+    background-color: black;
+    border: 1px white solid;
+}
