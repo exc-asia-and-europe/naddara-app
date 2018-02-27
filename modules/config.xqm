@@ -27,7 +27,7 @@ declare variable $naddara-config:app-root :=
 
 declare variable $naddara-config:resource-root := "/resources/commons/Abou_Naddara/Journals";
 
-declare variable $naddara-config:iiif-server := "http://kjc-sv002.kjc.uni-heidelberg.de:6081/fcgi-bin/iipsrv.fcgi?IIIF=";
+declare variable $naddara-config:iiif-server := "http://kjc-sv010.kjc.uni-heidelberg.de:6081/fcgi-bin/iipsrv.fcgi?IIIF=";
 declare variable $naddara-config:iiif-server-path := "kjc-sv016/commons/Abou_Naddara/";
 
 (:~
