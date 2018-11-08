@@ -4,9 +4,7 @@ module namespace app="http://hra.uni-heidelberg.de/ns/apps/naddara/app";
 
 import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
 import module namespace naddara-config="http://hra.uni-heidelberg.de/ns/apps/naddara/config" at "config.xqm";
-(:import module namespace ="http://hra.uni-heidelberg.de/ns/mods-hra-framework" at "/apps/tamboti/frameworks/mods-hra/mods-hra.xqm";:)
-import module namespace mods-hra="http://exist-db.org/mods/retrieve" at "/apps/tamboti/themes/default/modules/retrieve-mods.xql";
-
+import module namespace mods-hra-framework = "http://hra.uni-heidelberg.de/ns/mods-hra-framework" at "/apps/tamboti/frameworks/mods-hra/mods-hra.xqm";
 import module namespace mods-common = "http://exist-db.org/mods/common" at "/apps/tamboti/modules/search/mods-common.xql";
 
 declare namespace mods="http://www.loc.gov/mods/v3";
@@ -60,10 +58,10 @@ declare function app:short-entry($node as node(), $params as element(parameters)
     return
         if (collection($subcollection)//mods:mods) then
             <a href="?collection={$subcollection}" title="{$subcollection}">
-            { mods-hra:format-list-view($id, $entry, $subcollection) }
+            { mods-hra-framework:format-list-view($id, $entry, $subcollection) }
             </a>
         else
-            mods-hra:format-list-view($id, $entry, $subcollection)
+            mods-hra-framework:format-list-view($id, $entry, $subcollection)
 };
 
 declare function app:icon($node as node(), $params as element(parameters)?, $model as item()*) {
