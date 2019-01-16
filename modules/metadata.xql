@@ -1,7 +1,7 @@
 xquery version "3.0";
 
 import module namespace naddara-config="http://hra.uni-heidelberg.de/ns/apps/naddara/config" at "config.xqm";
-import module namespace mods-hra="http://exist-db.org/mods/retrieve" at "/apps/tamboti/themes/default/modules/retrieve-mods.xql";
+import module namespace mods-hra="http://exist-db.org/mods/retrieve" at "modules/retrieve-mods.xql";
 
 declare namespace mods = "http://www.loc.gov/mods/v3";
 declare option exist:serialize "media-type=text/html method=html5";
