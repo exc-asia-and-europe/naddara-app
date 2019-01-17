@@ -1,14 +1,7 @@
 xquery version "3.0";
 
 import module namespace json="http://www.json.org";
-
-import module namespace request = "http://exist-db.org/xquery/request";
-import module namespace session = "http://exist-db.org/xquery/session";
-(:import module namespace util = "http://exist-db.org/xquery/util";:)
 import module namespace naddara-config="http://hra.uni-heidelberg.de/ns/apps/naddara/config" at "../config.xqm";
-
-import module namespace mods-hra="http://exist-db.org/mods/retrieve" at "modules/retrieve-mods.xql";
-import module namespace mods-common = "http://exist-db.org/mods/common" at "/db/apps/tamboti/modules/mods-common.xql";
 
 declare namespace mods="http://www.loc.gov/mods/v3";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
@@ -214,3 +207,4 @@ return
 
         return
             local:thumbnails(xs:int(request:get-parameter("filmstripWidth", 800)), xs:int(request:get-parameter("page", 1)), $fn[1])
+ 
